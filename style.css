@@ -1,0 +1,136 @@
+:root{
+  --bg:#0f1724;
+  --accent:#60a5fa;
+  --muted:#9aa7bf;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;margin:0;
+  background:linear-gradient(180deg,#071023,#071827);
+  color:#e6eef8;
+}
+
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.panel{
+  width:100%;
+  max-width:920px;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.03);
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:18px;
+}
+
+@media(max-width:880px){
+  .panel{grid-template-columns:1fr;}
+}
+
+.clock-area{
+  padding:18px;
+  background:rgba(255,255,255,0.02);
+  border-radius:14px;
+}
+
+.clock-title{
+  font-size:13px;
+  color:var(--muted);
+  letter-spacing:0.07em;
+  text-transform:uppercase;
+}
+
+.clock-display{
+  font-size:clamp(40px,7vw,86px);
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+
+.subline{color:var(--muted);margin-top:4px;font-size:14px;}
+
+.big-time{
+  background:rgba(255,255,255,0.03);
+  padding:12px;
+  border-radius:12px;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:800;
+  text-align:center;
+  font-variant-numeric:tabular-nums;
+}
+
+.buttons{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+
+.btn{
+  flex:1;
+  padding:12px;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+  background:rgba(255,255,255,0.05);
+  color:var(--muted);
+  font-weight:700;
+}
+
+.btn.primary{
+  background:linear-gradient(90deg,#60a5fa,#3b82f6);
+  color:#021028;
+}
+
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.controls{
+  padding:18px;
+  background:rgba(255,255,255,0.02);
+  border-radius:14px;
+}
+
+.segmented{
+  display:flex;
+  gap:8px;
+  background:rgba(255,255,255,0.05);
+  padding:6px;
+  border-radius:10px;
+}
+
+.segmented button{
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  background:transparent;
+  color:var(--muted);
+  border:0;
+}
+
+.segmented .active{
+  background:rgba(96,165,250,0.12);
+  color:var(--accent);
+  font-weight:600;
+}
+
+.form-row{
+  display:flex;
+  gap:8px;
+}
+
+input{
+  padding:10px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  color:white;
+  }
