@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Digital Clock + Countdown Timer</title>
+
+  <!-- LINK YOUR CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel" role="application" aria-label="Digital Clock and Countdown">
+      <section class="clock-area" aria-labelledby="clockTitle">
+
+        <div>
+          <div class="clock-title" id="clockTitle">Real-time Clock</div>
+          <div id="liveClock" class="clock-display" aria-live="polite">00:00:00</div>
+          <div class="subline" id="tz">Timezone: —</div>
+        </div>
+
+        <div style="width:100%;">
+          <div class="clock-title" style="margin-top:8px">Stopwatch</div>
+          <div id="stopwatchDisplay" class="big-time" role="status" aria-live="polite">00:00:00.000</div>
+          <div class="buttons">
+            <button class="btn primary" id="swStart">Start</button>
+            <button class="btn ghost" id="swLap">Lap</button>
+            <button class="btn" id="swReset">Reset</button>
+          </div>
+          <div id="lapList" style="margin-top:8px;max-height:160px;overflow:auto;"></div>
+        </div>
+
+      </section>
+
+      <aside class="controls" aria-labelledby="countTitle">
+
+        <div>
+          <div class="clock-title" id="countTitle">Countdown Timer</div>
+
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <label style="flex:1" for="modeSelect" class="small">Mode</label>
+            <div class="segmented">
+
+              <button id="modeDuration" class="active">Duration</button>
+              <button id="modeTarget">Target date/time</button>
+            </div>
+          </div>
+
+          <!-- Duration -->
+          <div id="durationRow" style="margin-top:12px;">
+            <label class="small">Enter duration (HH:MM:SS)</label>
+            <div class="form-row">
+              <input type="number" id="hours" min="0" placeholder="HH" value="0">
+              <input type="number" id="minutes" min="0" max="59" placeholder="MM" value="1">
+              <input type="number" id="seconds" min="0" max="59" placeholder="SS" value="30">
+            </div>
+          </div>
+
+          <!-- Target date -->
+          <div id="targetRow" style="margin-top:12px; display:none;">
+            <label class="small">Pick a target date/time</label>
+            <input type="datetime-local" id="targetInput">
+          </div>
+
+          <div class="clock-title" style="margin-top:12px">Countdown display</div>
+          <div id="countDisplay" class="big-time">00:00:00</div>
+
+          <div class="buttons">
+            <button class="btn primary" id="startBtn">Start</button>
+            <button class="btn ghost" id="pauseBtn">Pause</button>
+            <button class="btn" id="resetBtn">Reset</button>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- LINK YOUR JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+              </html>
